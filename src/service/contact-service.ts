@@ -38,11 +38,6 @@ export class ContactService {
 
     static async get(user: User, id: number): Promise<ContactResponse> {
         const contact = await this.checkContactMustExist(user.username, id);
-
-        if (!contact) {
-            throw new ResponseError(404, "Contact not found");
-        }
-
         return toContactResponse(contact)
     }
 
@@ -56,6 +51,19 @@ export class ContactService {
             },
             data: updateRequest
         });
+
+        return toContactResponse(contact);
+    }
+
+    static async remove(user: User, id: number): Promise<ContactResponse> {
+        await this.checkContactMustExist(user.username, id);
+
+        const contact = await prismaClient.contact.delete({
+            where: {
+                id: id,
+                username: user.username
+            }
+        })
 
         return toContactResponse(contact);
     }

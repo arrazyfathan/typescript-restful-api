@@ -56,4 +56,21 @@ export class ContactController {
             next(e);
         }
     }
+
+    static async remove(req: UserRequest, res: Response, next: NextFunction) {
+        try {
+
+            if (!/^\d+$/.test(req.params.contactId)) {
+                return next(new ResponseError(400, "Invalid contactId"))
+            }
+
+            const contactId = Number(req.params.contactId);
+            await ContactService.remove(req.user!, contactId);
+            res.status(200).json({
+                data: "OK",
+            })
+        } catch (e) {
+            next(e);
+        }
+    }
 }

@@ -161,3 +161,54 @@ describe('PUT /api/contacts/:contactId', () => {
     })
 
 })
+
+describe('DELETE /api/contacts/:contactId', () => {
+
+    beforeEach(async () => {
+        await UserTest.create();
+        await ContactTest.create();
+    })
+
+    afterEach(async () => {
+        await ContactTest.deleteAll();
+        await UserTest.delete();
+    })
+
+    it('should be able to delete contact',async () => {
+        const contact = await ContactTest.get();
+        const response = await supertest(app)
+            .delete(`/api/contacts/${contact.id}`)
+            .set('X-API-TOKEN', 'test');
+
+        logger.debug(response.body);
+
+        expect(response.status).toBe(200);
+        expect(response.body.data).toBe("OK");
+    })
+
+
+    it('should reject delete contact if id is not found',async () => {
+        const contact = await ContactTest.get();
+        const response = await supertest(app)
+            .delete(`/api/contacts/${contact.id + 1}`)
+            .set('X-API-TOKEN', 'test');
+
+        logger.debug(response.body);
+
+        expect(response.status).toBe(404);
+        expect(response.body.errors).toBeDefined();
+    })
+
+    it('should reject delete contact if id is not valid',async () => {
+        const contact = await ContactTest.get();
+        const response = await supertest(app)
+            .delete(`/api/contacts/${contact.id} not valid`)
+            .set('X-API-TOKEN', 'test');
+
+        logger.debug(response.body);
+
+        expect(response.status).toBe(400);
+        expect(response.body.errors).toBeDefined();
+    })
+
+})
