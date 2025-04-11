@@ -4,6 +4,8 @@ import {UserService} from "../service/user-service";
 import {UserRequest} from "../type/user-request";
 import {CreateContactRequest} from "../model/contact-model";
 import {ContactService} from "../service/contact-service";
+import {logger} from "../application/logging";
+import {ResponseError} from "../error/response-error";
 
 export class ContactController {
 
@@ -21,6 +23,11 @@ export class ContactController {
 
     static async get(req: UserRequest, res: Response, next: NextFunction) {
         try {
+
+            if (!/^\d+$/.test(req.params.contactId)) {
+                return next(new ResponseError(400, "Invalid contactId"))
+            }
+
             const contactId = Number(req.params.contactId);
             const response = await ContactService.get(req.user!, contactId);
             res.status(200).json({
