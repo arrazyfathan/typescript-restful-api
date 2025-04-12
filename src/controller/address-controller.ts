@@ -81,4 +81,20 @@ export class AddressController {
             next(e);
         }
     }
+
+    static async list(req: UserRequest, res: Response, next: NextFunction) {
+        try {
+            if (!/^\d+$/.test(req.params.contactId)) {
+                return next(new ResponseError(400, "Invalid contactId"))
+            }
+
+            const contactId = Number(req.params.contactId);
+            const response = await AddressService.list(req.user!, contactId);
+            res.status(200).json({
+                data: response,
+            })
+        } catch (e) {
+            next(e);
+        }
+    }
 }

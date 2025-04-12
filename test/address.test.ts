@@ -301,3 +301,44 @@ describe('DELETE /api/contacts/:contactId/addresses/:addressId', () => {
         expect(response.body.errors).toBeDefined()
     })
 })
+
+describe('GET /api/contacts/:contactId/addresses', () => {
+
+    beforeEach(async () => {
+        await UserTest.create();
+        await ContactTest.create();
+        await AddressTest.create();
+    })
+
+    afterEach(async () => {
+        await AddressTest.deleteAll();
+        await ContactTest.deleteAll();
+        await UserTest.delete();
+    })
+
+    it('should be able to get list address', async () => {
+        const contact = await ContactTest.get();
+
+        const response = await supertest(app)
+            .get(`/api/contacts/${contact.id}/addresses`)
+            .set('X-API-TOKEN', 'test')
+
+        logger.debug(response.body);
+
+        expect(response.status).toBe(200);
+        expect(response.body.data.length).toBe(1);
+    })
+
+    it('should reject to get list address if contact id not valid', async () => {
+        const contact = await ContactTest.get();
+
+        const response = await supertest(app)
+            .get(`/api/contacts/${contact.id + 1}/addresses`)
+            .set('X-API-TOKEN', 'test')
+
+        logger.debug(response.body);
+
+        expect(response.status).toBe(404);
+        expect(response.body.errors).toBeDefined()
+    })
+})
