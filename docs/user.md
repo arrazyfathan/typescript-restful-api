@@ -35,7 +35,7 @@ Response Body (Failed)
 
 ## Login User
 
-Endpoint : POST /api/users
+Endpoint : POST /api/users/login
 
 Request Body :
 
@@ -135,23 +135,11 @@ Endpoint : DELETE /api/users/current
 Request Header :
 - X-API-TOKEN : <TOKEN>
 
-
-Request Body :
-
-```json
-{
-  "data": "Success"
-}
-```
-
 Response Body (Success)
 
 ```json
 {
-  "data": {
-    "username": "arrazyfathan",
-    "name": "Ar Razy Fathan Rabbani"
-  }
+  "data": "Success"
 }
 ```
 

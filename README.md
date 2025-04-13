@@ -77,6 +77,16 @@ development practices including proper type safety, database management, and RES
    ├── all test case   
 ```
 
+## 📥 Download Postman Collection
+
+You can download the Postman collection for the **Contact Management API** using the link below:
+
+🔗 [Download Contact Management API Postman Collection](postman/Contact Management API Docs.postman_collection.json)
+
+> Make sure to import this collection into your Postman workspace to test and explore all available endpoints.
+
+If you haven't already, install [Postman](https://www.postman.com/downloads/) to get started.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please open issues or submit pull requests.

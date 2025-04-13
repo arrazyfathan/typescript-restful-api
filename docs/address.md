@@ -44,7 +44,7 @@ Response Body (Failed) :
 
 ## Get Address
 
-Endpoint : POST api/contacts/:idContact/addresses/:idAddress
+Endpoint : GET api/contacts/:idContact/addresses/:idAddress
 
 Request Header :
 - X-API-TOKEN : <TOKEN>
