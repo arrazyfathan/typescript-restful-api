@@ -81,7 +81,7 @@ development practices including proper type safety, database management, and RES
 
 You can download the Postman collection for the **Contact Management API** using the link below:
 
-🔗 [Download Contact Management API Postman Collection](postman/Contact Management API Docs.postman_collection.json)
+🔗 [Download Contact Management API Postman Collection](https://github.com/arrazyfathan/typescript-restful-api/blob/main/postman/Contact%20Management%20API%20Docs.postman_collection.json)
 
 > Make sure to import this collection into your Postman workspace to test and explore all available endpoints.
 
