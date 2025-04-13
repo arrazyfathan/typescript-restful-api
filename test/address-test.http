@@ -1,0 +1,42 @@
+### Create Address
+POST http://localhost:3000/api/contacts/215/addresses
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+{
+  "street": "Street test 3",
+  "city": "City test 3",
+  "province": "Province test 3",
+  "country": "Country test 3",
+  "postal_code": "123456"
+}
+
+### GET Addresses by ID
+GET http://localhost:3000/api/contacts/215/addresses/65
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+### GET List Addresses by ID
+GET http://localhost:3000/api/contacts/215/addresses
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+### Update Address
+PUT http://localhost:3000/api/contacts/215/addresses/65
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+{
+  "street": "Street test edited",
+  "city": "City test",
+  "province": "Province test",
+  "country": "Country test",
+  "postal_code": "123456"
+}
+
+### REMOVE Addresses by ID
+DELETE http://localhost:3000/api/contacts/215/addresses/67
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5

@@ -1,9 +1,42 @@
-## Login User
+### Register User
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "han",
+  "password": "password123",
+  "name": "Han Samu"
+}
+
+### Login User
 POST http://localhost:3000/api/users/login
 Content-Type: application/json
 Accept: application/json
 
 {
-  "username": "arrazyfathan",
-  "password": "secret"
+  "username": "han",
+  "password": "password123"
+}
+
+### Get User
+GET http://localhost:3000/api/users/current
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+### Logout User
+DELETE http://localhost:3000/api/users/current
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+### Update User
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+{
+  "username": "han",
+  "password": "password123",
+  "name": "Han Samu Edited"
 }

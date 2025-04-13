@@ -81,7 +81,7 @@ export class ContactController {
                 email: req.query.email as string,
                 phone: req.query.phone as string,
                 page: req.query.page ? Number(req.query.page) : 1,
-                size: req.query.page ? Number(req.query.size) : 10,
+                size: req.query.size ? Number(req.query.size) : 10,
             }
 
             const response = await ContactService.search(req.user!, request);

@@ -1,0 +1,40 @@
+### Create Contact
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+{
+  "first_name": "Roayan",
+  "last_name": "Manuk",
+  "email": "Gedi@mail.com",
+  "phone": "1212121212"
+}
+
+### GET Contact by ID
+GET http://localhost:3000/api/contacts/215
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+### DELETE Contact by ID
+DELETE http://localhost:3000/api/contacts/214
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+### Update Contact
+PUT http://localhost:3000/api/contacts/215
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
+
+{
+  "first_name": "Budi Edited",
+  "last_name": "Sudarsono",
+  "email": "budi@mail.com",
+  "phone": "1212121212"
+}
+
+### Search Contact
+GET http://localhost:3000/api/contacts
+Accept: application/json
+X-API-TOKEN: 17406fb7-7269-4cfd-ae2c-82f829d156c5
