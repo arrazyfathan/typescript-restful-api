@@ -48,7 +48,7 @@ development practices including proper type safety, database management, and RES
 
    ```shell
    npm run build
-   npx run dev / start
+   npm run dev / start
    ```
 
 ## 🏗️ Tech Stack
@@ -57,7 +57,6 @@ development practices including proper type safety, database management, and RES
 - Express.js
 - TypeScript
 - Zod (validation)
-- JWT (authentication)
 - Jest & Supertest (testing)
 
 ## 📂 Project Structure
