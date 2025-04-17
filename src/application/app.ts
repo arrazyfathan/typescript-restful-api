@@ -1,7 +1,7 @@
 import express from "express";
-import {publicRouter} from "../route/public-api";
-import {errorMiddleware} from "../middleware/error-middleware";
-import {apiRouter} from "../route/api";
+import { publicRouter } from "../routes/public-api";
+import { errorMiddleware } from "../middlewares/error-middleware";
+import { apiRouter } from "../routes/api";
 
 export const app = express();
 app.use(express.json());

@@ -1,8 +1,8 @@
 import express from "express";
-import {authMiddleware} from "../middleware/auth-middleware";
-import {UserController} from "../controller/user-controller";
-import {ContactController} from "../controller/contact-controller";
-import {AddressController} from "../controller/address-controller";
+import {authMiddleware} from "../middlewares/auth-middleware";
+import {UserController} from "../controllers/user-controller";
+import {ContactController} from "../controllers/contact-controller";
+import {AddressController} from "../controllers/address-controller";
 
 export const apiRouter = express.Router();
 apiRouter.use(authMiddleware)

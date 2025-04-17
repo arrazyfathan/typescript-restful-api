@@ -1,8 +1,8 @@
-import {UserRequest} from "../type/user-request";
+import {UserRequest} from "../types/user-request";
 import {NextFunction, Response} from "express";
-import {CreateAddressRequest, GetAddressRequest, UpdateAddressRequest} from "../model/address-model";
-import {AddressService} from "../service/address-service";
-import {ResponseError} from "../error/response-error";
+import {CreateAddressRequest, GetAddressRequest, UpdateAddressRequest} from "../models/address-model";
+import {AddressService} from "../services/address-service";
+import {ResponseError} from "../errors/response-error";
 
 export class AddressController {
 

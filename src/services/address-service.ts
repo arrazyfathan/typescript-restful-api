@@ -5,13 +5,13 @@ import {
     GetAddressRequest, RemoveAddressRequest,
     toAddressResponse,
     UpdateAddressRequest
-} from "../model/address-model";
-import {Validation} from "../validation/validation";
-import {AddressValidation} from "../validation/address-validation";
+} from "../models/address-model";
+import {Validation} from "../validations/validation";
+import {AddressValidation} from "../validations/address-validation";
 import {prismaClient} from "../application/database";
 import {ContactService} from "./contact-service";
-import {ResponseError} from "../error/response-error";
-import {Pageable} from "../model/page";
+import {ResponseError} from "../errors/response-error";
+import {Pageable} from "../models/page";
 
 export class AddressService {
 

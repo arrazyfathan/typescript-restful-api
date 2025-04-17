@@ -4,13 +4,13 @@ import {
     SearchContactRequest,
     toContactResponse,
     UpdateContactRequest
-} from "../model/contact-model";
-import {Validation} from "../validation/validation";
-import {ContactValidation} from "../validation/contact-validation";
+} from "../models/contact-model";
+import {Validation} from "../validations/validation";
+import {ContactValidation} from "../validations/contact-validation";
 import {Contact, User} from "@prisma/client";
 import {prismaClient} from "../application/database";
-import {ResponseError} from "../error/response-error";
-import {Pageable} from "../model/page";
+import {ResponseError} from "../errors/response-error";
+import {Pageable} from "../models/page";
 import * as sea from "node:sea";
 
 export class ContactService {

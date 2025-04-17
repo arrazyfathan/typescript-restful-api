@@ -1,11 +1,11 @@
 import {Request, Response, NextFunction} from "express";
-import {CreateUserRequest, LoginUserRequest, UpdateUserRequest} from "../model/user-model";
-import {UserService} from "../service/user-service";
-import {UserRequest} from "../type/user-request";
-import {CreateContactRequest, SearchContactRequest, UpdateContactRequest} from "../model/contact-model";
-import {ContactService} from "../service/contact-service";
+import {CreateUserRequest, LoginUserRequest, UpdateUserRequest} from "../models/user-model";
+import {UserService} from "../services/user-service";
+import {UserRequest} from "../types/user-request";
+import {CreateContactRequest, SearchContactRequest, UpdateContactRequest} from "../models/contact-model";
+import {ContactService} from "../services/contact-service";
 import {logger} from "../application/logging";
-import {ResponseError} from "../error/response-error";
+import {ResponseError} from "../errors/response-error";
 
 export class ContactController {
 

@@ -1,7 +1,7 @@
 import {Request, Response, NextFunction} from "express";
-import {CreateUserRequest, LoginUserRequest, UpdateUserRequest} from "../model/user-model";
-import {UserService} from "../service/user-service";
-import {UserRequest} from "../type/user-request";
+import {CreateUserRequest, LoginUserRequest, UpdateUserRequest} from "../models/user-model";
+import {UserService} from "../services/user-service";
+import {UserRequest} from "../types/user-request";
 
 export class UserController {
 
